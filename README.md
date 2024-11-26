@@ -1,50 +1,77 @@
-# React + TypeScript + Vite
+# Docs Pro - Real-time Collaborative Text Editor
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A real-time collaborative text editor built with React, TypeScript, and Firebase. This application allows multiple users to edit documents simultaneously with changes syncing in real-time.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Real-time collaborative editing
+- Rich text formatting
+- Anonymous authentication
+- Auto-saving
+- Google Docs-like interface
+- Cursor position preservation during updates
 
-## Expanding the ESLint configuration
+## 🛠️ Technologies
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- React 18
+- TypeScript
+- Firebase (Authentication & Firestore)
+- Vite
+- React Quill
+- Lodash
 
-- Configure the top-level `parserOptions` property like this:
+## 📋 Prerequisites
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+Before you begin, ensure you have:
+- Node.js (v14 or higher)
+- npm or yarn
+- Firebase account with a new project
+
+## ⚙️ Environment Setup
+
+1. Create a `.env` file in the root directory
+2. Add your Firebase configuration:
+
+```env
+VITE_FIREBASE_API_KEY=your_api_key
+VITE_FIREBASE_AUTH_DOMAIN=your_auth_domain
+VITE_FIREBASE_PROJECT_ID=your_project_id
+VITE_FIREBASE_STORAGE_BUCKET=your_storage_bucket
+VITE_FIREBASE_MESSAGING_SENDER_ID=your_messaging_sender_id
+VITE_FIREBASE_APP_ID=your_app_id
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## 🚀 Installation
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+1. Clone the repository:
+```bash
+git clone https://github.com/pahancha/docs-pro.git
+cd docs-pro
 ```
+
+2. Install dependencies:
+```bash
+npm install
+```
+
+3. Start the development server:
+```bash
+npm run dev
+```
+
+## 🏗️ Building for Production
+
+```bash
+npm run build
+```
+
+### Real-time Collaboration
+The application uses Firebase Firestore for real-time synchronization. Changes are throttled and synchronized across all connected clients.
+
+### Text Editor
+Built using React Quill with custom styling. The editor supports:
+- Rich text formatting
+- Real-time updates
+- Automatic saving
+- Cursor position preservation
+
