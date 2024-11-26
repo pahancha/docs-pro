@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import './App.css'
 import { auth } from './firebase-config';
 import { signInAnonymously, onAuthStateChanged } from 'firebase/auth';
+import { TextEditor } from './components/text-editor';
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
     <div className='App'>
       <header>
         <h1> Docs Pro </h1>
+        <TextEditor />
       </header>
     </div>
   )
